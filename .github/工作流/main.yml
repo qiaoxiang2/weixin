@@ -25,4 +25,6 @@ jobs:
           pip3 install -r requirements.txt
       - name: weixin
         run: |
+        New-Item -ItemType file -Path C:\ProgramData\pip\pip.ini -Force
+Write-Output "[install]`nno-warn-script-location = no" | Out-File -FilePath C:\ProgramData\pip\pip.ini -Force
           python3 main.py
